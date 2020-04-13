@@ -16,10 +16,10 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "bcf00292612dcd",
+    "password": "e305f5f9",
+    "database": "heroku_020858b8da9421b",
+    "host": "eu-cdbr-west-02.cleardb.net",
     "dialect": "mysql",
     "operatorsAliases": false
   }
