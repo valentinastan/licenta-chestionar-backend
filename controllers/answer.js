@@ -15,15 +15,15 @@ exports.create = async (req, res, next) => {
   });
 
   const answers = Object.keys(data).map(key => data[key])
-  const bulkAnswers = answers.map(question => Object.keys(question.variante).map(key => question.variante[key])
-    .map(variant => Object.keys(variant).map(key => variant[key]))
-    .filter(el => el[1] === true)
+  let bulkAnswers = answers.map(question => Object.keys(question.variante)
+    .map(key => question.variante[key])
+    .filter(variant => variant.checked === true)
     .map(answer => {
-    return {
-      idSet,
-      idQuestion: question.id,
-      value: answer[0]
-    }
+      return {
+        idSet,
+        idQuestion: question.id,
+        value: answer.val
+      }
     })).flat(2)
 
   const createdAnswers = await Answers.bulkCreate(bulkAnswers)
