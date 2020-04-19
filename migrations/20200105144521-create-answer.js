@@ -13,11 +13,6 @@ module.exports = {
       },
       idQuestion: {
         type: Sequelize.INTEGER,
-        references: {
-          model: 'Questions', // name of Target model
-          key: 'id', // key in Target model that we're referencing
-        },
-        onDelete: 'CASCADE',
       },
       value: {
         type: Sequelize.STRING

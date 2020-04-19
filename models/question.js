@@ -4,7 +4,6 @@ module.exports = (sequelize, DataTypes) => {
     text: DataTypes.STRING
   }, {});
   Question.associate = function(models) {
-    Question.hasMany(models.Answer)
   };
   return Question;
 };
