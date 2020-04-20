@@ -22,6 +22,7 @@ const colors = {
 }
 
 const morganMiddleware = morgan(function (tokens, req, res) {
+    console.log("USING MORGAN MIDDLEWARE")
     var status = headersSent(res)
       ? res.statusCode
       : undefined
@@ -36,6 +37,7 @@ const morganMiddleware = morgan(function (tokens, req, res) {
       : responseTime <= 300 ? colors.yellowColor
       : colors.redColor
 
+    console.log('PUTTING STUFF')
     return [
         '\n\n\n',
         chalk.hex('#ff4757').bold('🍄  Morgan --> '),
