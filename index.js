@@ -27,7 +27,7 @@ app.use((error, req, res, next) => {
   res.status(statusCode).json({ message: message, errors: errorArray })
 })
 
-port = 8080
+port = process.env.PORT
 
 console.log("ENTIRE ENV", process.env)
 console.log("ENV VALUE: ", process.env.NODE_ENV)
