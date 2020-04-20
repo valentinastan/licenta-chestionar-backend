@@ -27,5 +27,12 @@ app.use((error, req, res, next) => {
   res.status(statusCode).json({ message: message, errors: errorArray })
 })
 
+port = 8080
 
-app.listen(2020)
+console.log("ENTIRE ENV", process.env)
+console.log("ENV VALUE: ", process.env.NODE_ENV)
+if(process.env.NODE_ENV === "development"){
+  port = 2020
+}
+
+app.listen(port)
