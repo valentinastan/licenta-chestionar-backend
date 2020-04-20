@@ -28,7 +28,7 @@ exports.create = async (req, res, next) => {
       }
     })).flat(2)
 
-    console.log("IN CREATE ACTION 3")
+    console.log("IN CREATE ACTION 34")
   const createdAnswers = await Answers.bulkCreate(bulkAnswers)
   console.log("IN CREATE ACTION 4")
   console.log(createdAnswers)
