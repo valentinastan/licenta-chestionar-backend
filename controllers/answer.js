@@ -3,7 +3,6 @@ const Answers = models.Answer
 const { uuid } = require('uuidv4');
 
 exports.create = async (req, res, next) => {
-  console.log("IN CREATE ACTION")
   const data = req.body
   const idSet = uuid()
 
@@ -14,7 +13,6 @@ exports.create = async (req, res, next) => {
       }, []);
     }
   });
-  console.log("IN CREATE ACTION 2")
 
   const answers = Object.keys(data).map(key => data[key])
   let bulkAnswers = answers.map(question => Object.keys(question.variante)
@@ -28,9 +26,6 @@ exports.create = async (req, res, next) => {
       }
     })).flat(2)
 
-    console.log("IN CREATE ACTION 34")
   const createdAnswers = await Answers.bulkCreate(bulkAnswers)
-  console.log("IN CREATE ACTION 4")
-  console.log(createdAnswers)
   res.status(200).json(createdAnswers)
 }

@@ -28,9 +28,6 @@ app.use((error, req, res, next) => {
 })
 
 port = process.env.PORT
-
-console.log("ENTIRE ENV", process.env)
-console.log("ENV VALUE: ", process.env.NODE_ENV)
 if(process.env.NODE_ENV === "development"){
   port = 2020
 }
